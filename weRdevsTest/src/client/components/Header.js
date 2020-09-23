@@ -1,33 +1,40 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {connect} from 'react-redux';
 
-const Header =({auth})=>{
-    console.log('My auth status', auth);
+const nav = {
+    textTransform:"uppercase",
+    height:"130px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    textAlign:"center",
+}
+const li = {
+    color:"#3D3D3D",
+    fontSize:"28px",
+    fontFamily:"Rubik",
+    textTransform:"uppercase",
+    display:"block",
+    paddingTop: "40px",
+    paddingRight:"110px",
+    marginLeft:"-40px"
+}
 
-    const authButton = auth ? (
-        <a href='/api/logout'>Logout</a>
-    ) : (
-        <a href='/api/auth/google'>Login</a>
-    );
-
+const Header =()=> {
     return(
-        <nav>
-            <div className="nav-wrapper">
-                <Link to='/' className = "brand-logo">React SSR</Link>
-                <ul className="right">
-                   <li><Link to='/users'>Users</Link> </li>
-                    <li> <Link to='/admins'>Admins</Link></li>
-                    <li> {authButton}</li>
-                </ul>
-            </div>
-        </nav>
+                <div style={nav}>
+                    <div>
+                        <Link to='/'><img style ={{marginTop:"24px",marginLeft:"110px" }} src="/assets/logoSmall.jpeg" alt="logo"/></Link>
+                    </div>
+                    <div style ={{textAlign:"center"}}>
+                        <ul style ={{display:"flex"}}>
+                            <li style ={li}><Link style={{color:"#3D3D3D", textDecoration:"none"}} to='/'>Home</Link></li>
+                            <li style ={li}><Link style={{color:"#3D3D3D",textDecoration:"none" }}to='/about'>About Us</Link></li>
+                        </ul>
+                    </div>
 
+                </div>
     );
 };
 
-function mapStateToProps({auth}) {
-    return {auth};
-}
-
-export default connect(mapStateToProps)(Header);
+export default (Header);

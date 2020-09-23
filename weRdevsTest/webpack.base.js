@@ -1,5 +1,4 @@
 module.exports = {
-  // Tell webpack to run babel on every file it runs through
   module: {
     rules: [
       {
@@ -10,10 +9,12 @@ module.exports = {
           presets: [
             'react',
             'stage-0',
+            'es2015',
             ['env', { targets: { browsers: ['last 2 versions'] } }]
           ]
         }
-      }
+      },
+
     ]
   }
 };

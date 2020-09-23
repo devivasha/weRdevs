@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -77,111 +77,10 @@ module.exports = require("react");
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-
-function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
-
-var FETCH_USERS = exports.FETCH_USERS = 'fetch_users';
-var fetchUsers = exports.fetchUsers = function fetchUsers() {
-    return function () {
-        var _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(dispatch, getState, api) {
-            var res;
-            return regeneratorRuntime.wrap(function _callee$(_context) {
-                while (1) {
-                    switch (_context.prev = _context.next) {
-                        case 0:
-                            _context.next = 2;
-                            return api.get('/users');
-
-                        case 2:
-                            res = _context.sent;
-
-                            dispatch({
-                                type: FETCH_USERS,
-                                payload: res
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context.stop();
-                    }
-                }
-            }, _callee, undefined);
-        }));
-
-        return function (_x, _x2, _x3) {
-            return _ref.apply(this, arguments);
-        };
-    }();
-};
-var FETCH_CURRENT_USER = exports.FETCH_CURRENT_USER = 'fetch_current_user';
-
-var fetchCurrentUser = exports.fetchCurrentUser = function fetchCurrentUser() {
-    return function () {
-        var _ref2 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(dispatch, getState, api) {
-            var res;
-            return regeneratorRuntime.wrap(function _callee2$(_context2) {
-                while (1) {
-                    switch (_context2.prev = _context2.next) {
-                        case 0:
-                            _context2.next = 2;
-                            return api.get('/current_user');
-
-                        case 2:
-                            res = _context2.sent;
-
-                            dispatch({
-                                type: FETCH_CURRENT_USER,
-                                payload: res
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context2.stop();
-                    }
-                }
-            }, _callee2, undefined);
-        }));
-
-        return function (_x4, _x5, _x6) {
-            return _ref2.apply(this, arguments);
-        };
-    }();
-};
-var FETCH_ADMINS = exports.FETCH_ADMINS = 'fetch_admins';
-var fetchAdmins = exports.fetchAdmins = function fetchAdmins() {
-    return function () {
-        var _ref3 = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(dispatch, getState, api) {
-            var res;
-            return regeneratorRuntime.wrap(function _callee3$(_context3) {
-                while (1) {
-                    switch (_context3.prev = _context3.next) {
-                        case 0:
-                            _context3.next = 2;
-                            return api.get('/admins');
-
-                        case 2:
-                            res = _context3.sent;
-
-                            dispatch({
-                                type: FETCH_ADMINS,
-                                payload: res
-                            });
-
-                        case 4:
-                        case 'end':
-                            return _context3.stop();
-                    }
-                }
-            }, _callee3, undefined);
-        }));
-
-        return function (_x7, _x8, _x9) {
-            return _ref3.apply(this, arguments);
-        };
-    }();
-};
+var OPEN_MODAL = exports.OPEN_MODAL = 'OPEN_MODAL';
+var CLOSE_MODAL = exports.CLOSE_MODAL = 'CLOSE_MODAL';
 
 /***/ }),
 /* 2 */
@@ -193,13 +92,13 @@ module.exports = require("react-redux");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("react-router-config");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 5 */
@@ -218,29 +117,17 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HomePage = __webpack_require__(13);
+var _HomePage = __webpack_require__(14);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _ContactPage = __webpack_require__(14);
+var _AboutUsPage = __webpack_require__(19);
 
-var _ContactPage2 = _interopRequireDefault(_ContactPage);
+var _AboutUsPage2 = _interopRequireDefault(_AboutUsPage);
 
-var _UsersListPage = __webpack_require__(15);
-
-var _UsersListPage2 = _interopRequireDefault(_UsersListPage);
-
-var _App = __webpack_require__(16);
+var _App = __webpack_require__(20);
 
 var _App2 = _interopRequireDefault(_App);
-
-var _NotFoundPage = __webpack_require__(19);
-
-var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
-
-var _AadminsListPage = __webpack_require__(20);
-
-var _AadminsListPage2 = _interopRequireDefault(_AadminsListPage);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -248,122 +135,14 @@ exports.default = [_extends({}, _App2.default, {
     routes: [_extends({}, _HomePage2.default, {
         path: '/',
         exact: true
-    }), _extends({}, _AadminsListPage2.default, {
-        path: '/admins'
-    }), _extends({}, _ContactPage2.default, {
-        path: '/contact'
+    }), _extends({}, _AboutUsPage2.default, {
+        path: '/about'
 
-    }), _extends({}, _UsersListPage2.default, {
-        path: '/users'
-    }), _extends({}, _NotFoundPage2.default)]
+    })]
 })];
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("redux");
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-__webpack_require__(9);
-
-var _express = __webpack_require__(10);
-
-var _express2 = _interopRequireDefault(_express);
-
-var _expressHttpProxy = __webpack_require__(11);
-
-var _expressHttpProxy2 = _interopRequireDefault(_expressHttpProxy);
-
-var _renderer = __webpack_require__(12);
-
-var _renderer2 = _interopRequireDefault(_renderer);
-
-var _createStore = __webpack_require__(24);
-
-var _createStore2 = _interopRequireDefault(_createStore);
-
-var _reactRouterConfig = __webpack_require__(4);
-
-var _Routes = __webpack_require__(5);
-
-var _Routes2 = _interopRequireDefault(_Routes);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var app = (0, _express2.default)();
-var PORT = 3000;
-app.use('/api', (0, _expressHttpProxy2.default)('http://react-ssr-api.herokuapp.com', {
-    proxyReqOptDecorator: function proxyReqOptDecorator(opts) {
-        opts.headers['x-forwarded-host'] = 'localhost:3000';
-        return opts;
-    }
-}));
-app.use(_express2.default.static('public'));
-app.get('*', function (req, res) {
-
-    var store = (0, _createStore2.default)(req);
-    var promises = (0, _reactRouterConfig.matchRoutes)(_Routes2.default, req.path).map(function (_ref) {
-        var route = _ref.route;
-
-        return route.loadData ? route.loadData(store) : null;
-    }).map(function (promise) {
-        if (promise) {
-            return new Promise(function (resolve, reject) {
-                promise.then(resolve).catch(resolve);
-            });
-        }
-    });
-    Promise.all(promises).then(function () {
-        var context = {};
-        var content = (0, _renderer2.default)(req, store, context);
-
-        if (context.url) {
-            return res.redirect(301, context.url);
-        }
-
-        if (context.notFound) {
-            res.status(404);
-        }
-        res.send(content);
-    });
-});
-app.listen(PORT, function () {
-    console.log('Listening on port 3000');
-});
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports) {
-
-module.exports = require("babel-polyfill");
-
-/***/ }),
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = require("express");
-
-/***/ }),
-/* 11 */
-/***/ (function(module, exports) {
-
-module.exports = require("express-http-proxy");
-
-/***/ }),
-/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -377,46 +156,177 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(3);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var wrapper = {
+    width: '510px',
+    height: '140px',
+    backgroundColor: "#FBFBFB",
+    position: "absolute",
+    top: "40%",
+    left: "10%",
+    zIndex: "500"
+};
+var input = {
+    border: "2px solid #FDD000",
+    marginLeft: "25px",
+    marginRight: "20px",
+    color: 'rgba(61, 61, 61, 0.6)',
+    fontSize: "16px",
+    fontWeight: '500',
+    fontFamily: "Rubik"
+};
+
+var cross = {
+    backgroundColor: "#FDD000",
+    width: "28px",
+    height: "28px",
+    textAlign: "center",
+    position: "absolute",
+    top: "0",
+    right: "0",
+    cursor: "pointer"
+};
+var span = {
+    position: "absolute",
+    top: "-24px",
+    right: "217px",
+    color: "rgba(61, 61, 61, 0.4)"
+
+};
+var span2 = {
+    position: "absolute",
+    top: "-24px",
+    right: "436px",
+    color: "rgba(61, 61, 61, 0.4)"
+};
+
+var Form = function Form(_ref) {
+    var close = _ref.close,
+        props = _ref.props;
+
+    return _react2.default.createElement(
+        'div',
+        { style: wrapper },
+        _react2.default.createElement(
+            'div',
+            { style: { marginTop: "50px", position: "relative" } },
+            _react2.default.createElement(
+                'form',
+                null,
+                _react2.default.createElement(
+                    'label',
+                    null,
+                    _react2.default.createElement(
+                        'span',
+                        { style: span2 },
+                        ' Month '
+                    ),
+                    _react2.default.createElement('input', { style: input, type: 'text', name: 'month', value: "  " + props.date.date })
+                ),
+                _react2.default.createElement(
+                    'label',
+                    null,
+                    _react2.default.createElement(
+                        'span',
+                        { style: span },
+                        ' Day '
+                    ),
+                    _react2.default.createElement('input', { style: input, type: 'text', name: 'day', value: "  " + props.date.number + "th " + props.date.name })
+                )
+            )
+        ),
+        _react2.default.createElement(
+            'div',
+            { style: cross, onClick: function onClick() {
+                    close();
+                } },
+            'X'
+        )
+    );
+};
+exports.default = Form;
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-helmet");
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(10);
+
+var _express = __webpack_require__(11);
+
+var _express2 = _interopRequireDefault(_express);
+
+var _renderer = __webpack_require__(13);
+
+var _renderer2 = _interopRequireDefault(_renderer);
+
+var _createStore = __webpack_require__(24);
+
+var _createStore2 = _interopRequireDefault(_createStore);
+
+var _reactRouterConfig = __webpack_require__(3);
 
 var _Routes = __webpack_require__(5);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _reactRedux = __webpack_require__(2);
-
-var _reactRouterConfig = __webpack_require__(4);
-
-var _serializeJavascript = __webpack_require__(22);
-
-var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
-
-var _reactHelmet = __webpack_require__(6);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var renderingToString = __webpack_require__(23).renderToString;
+var app = (0, _express2.default)();
+var PORT = 3000;
+app.use(_express2.default.static('public'));
+app.get('*', function (req, res) {
+    var store = (0, _createStore2.default)(req);
+    var promises = (0, _reactRouterConfig.matchRoutes)(_Routes2.default, req.path).map(function (_ref) {
+        var route = _ref.route;
 
-exports.default = function (req, store, context) {
-    var content = renderingToString(_react2.default.createElement(
-        _reactRedux.Provider,
-        { store: store },
-        _react2.default.createElement(
-            _reactRouterDom.StaticRouter,
-            { location: req.path, context: context },
-            _react2.default.createElement(
-                'div',
-                null,
-                (0, _reactRouterConfig.renderRoutes)(_Routes2.default)
-            )
-        )
-    ));
-
-    var helmet = _reactHelmet.Helmet.renderStatic();
-    return '\n<html>\n<head>\n  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">\n' + helmet.title.toLocaleString() + '\n' + helmet.meta.toString() + '\n</head>\n<body>\n<div id="root">' + content + '</div>\n<script >\nwindow.INITIAL_STATE = ' + (0, _serializeJavascript2.default)(store.getState()) + '\n</script>\n<script src="bundle.js"></script>\n</body>\n</html>\n';
-};
+        return route.loadData ? route.loadData(store) : null;
+    }).map(function (promise) {
+        if (promise) {
+            return new Promise(function (resolve, reject) {
+                promise.then(resolve).catch(resolve);
+            });
+        }
+    });
+    Promise.all(promises).then(function () {
+        var content = (0, _renderer2.default)(req, store);
+        res.send(content);
+    });
+});
+app.listen(PORT, function () {
+    console.log('Listening on port 3000');
+});
 
 /***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("babel-polyfill");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+module.exports = require("express");
+
+/***/ }),
+/* 12 */,
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -431,26 +341,43 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactRouterDom = __webpack_require__(4);
+
+var _Routes = __webpack_require__(5);
+
+var _Routes2 = _interopRequireDefault(_Routes);
+
+var _reactRedux = __webpack_require__(2);
+
+var _reactRouterConfig = __webpack_require__(3);
+
+var _serializeJavascript = __webpack_require__(22);
+
+var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
+
+var _reactHelmet = __webpack_require__(7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var HomePage = function HomePage() {
-    return _react2.default.createElement(
-        'div',
-        { className: 'center-align', style: { marginTop: "20px" } },
+var renderingToString = __webpack_require__(23).renderToString;
+
+exports.default = function (req, store) {
+    var content = renderingToString(_react2.default.createElement(
+        _reactRedux.Provider,
+        { store: store },
         _react2.default.createElement(
-            'h3',
-            null,
-            'Welcome'
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            'Check features'
+            _reactRouterDom.StaticRouter,
+            { location: req.path },
+            _react2.default.createElement(
+                'div',
+                null,
+                (0, _reactRouterConfig.renderRoutes)(_Routes2.default)
+            )
         )
-    );
-};
-exports.default = {
-    component: HomePage
+    ));
+
+    var helmet = _reactHelmet.Helmet.renderStatic();
+    return '\n<html>\n<head>\n<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" \nintegrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" \ncrossorigin="anonymous">\n<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">\n' + helmet.title.toLocaleString() + '\n' + helmet.meta.toString() + '\n</head>\n<body>\n<div id="root">' + content + '</div>\n<script >\nwindow.INITIAL_STATE = ' + (0, _serializeJavascript2.default)(store.getState()) + '\n</script>\n<script src="bundle.js"></script>\n</body>\n</html>\n';
 };
 
 /***/ }),
@@ -468,31 +395,143 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _Calendar = __webpack_require__(15);
+
+var _Calendar2 = _interopRequireDefault(_Calendar);
+
+var _Form = __webpack_require__(6);
+
+var _Form2 = _interopRequireDefault(_Form);
+
+var _reactHelmet = __webpack_require__(7);
+
+var _reactRedux = __webpack_require__(2);
+
+var _actions = __webpack_require__(1);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var ContactPage = function ContactPage() {
+var calendar = {
+    color: "white",
+    backgroundColor: "#272829",
+    width: "40%",
+    height: "100%",
+    zIndex: "120",
+    position: "absolute",
+    top: "0",
+    right: "0"
+};
+var hText = {
+    color: "#FDD000",
+    fontSize: "32px",
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "500",
+    textTransform: "uppercase",
+    width: "40%",
+    position: "absolute",
+    top: "29%",
+    left: "40%"
+};
+var pText = {
+    color: "#DFDFDF",
+    fontSize: "30px",
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "300",
+    textAlign: "right",
+    position: "absolute",
+    top: "46%",
+    left: "30%"
+
+};
+
+var HomePage = function HomePage(_ref) {
+    var modal = _ref.modal,
+        openModal = _ref.openModal,
+        closeModal = _ref.closeModal;
+
+
+    function head() {
+        return _react2.default.createElement(
+            _reactHelmet.Helmet,
+            null,
+            _react2.default.createElement(
+                "title",
+                null,
+                "We Are Devs - Web Studio"
+            ),
+            _react2.default.createElement("meta", { property: "og:title", content: "We Are Devs - Web Studio" })
+        );
+    }
     return _react2.default.createElement(
-        'div',
-        null,
+        "div",
+        { style: { position: "relative", zIndex: "100" } },
+        head,
         _react2.default.createElement(
-            'div',
+            "div",
             null,
-            'Our Contacts:'
-        ),
-        _react2.default.createElement(
-            'h6',
-            null,
-            'Phone'
-        ),
-        _react2.default.createElement(
-            'h6',
-            null,
-            'Email'
+            _react2.default.createElement("img", { style: { width: "100%", height: "auto" }, src: "/assets/mainImg.jpeg" }),
+            _react2.default.createElement(
+                "div",
+                null,
+                _react2.default.createElement(
+                    "h2",
+                    { style: hText },
+                    " Choose the day ",
+                    _react2.default.createElement("br", null),
+                    " for the meeting "
+                ),
+                _react2.default.createElement(
+                    "p",
+                    { style: pText },
+                    " We encourage you to book your ",
+                    _react2.default.createElement("br", null),
+                    " appointment online. ",
+                    _react2.default.createElement("br", null),
+                    " This will save you time. "
+                )
+            ),
+            _react2.default.createElement(
+                "div",
+                { style: calendar },
+                _react2.default.createElement(
+                    "div",
+                    { style: { width: "460px", height: "490px", margin: "20% auto" } },
+                    _react2.default.createElement(_Calendar2.default, { select: function select(date) {
+                            openModal(date);
+                        } })
+                )
+            ),
+            modal.opened === true ? _react2.default.createElement(_Form2.default, { props: modal.props, close: function close() {
+                    closeModal();
+                } }) : false
         )
     );
 };
+var mapStateToProps = function mapStateToProps(state) {
+    return {
+        modal: state.modal
+    };
+};
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+    return {
+        openModal: function openModal(date) {
+            return dispatch({
+                type: _actions.OPEN_MODAL,
+                payload: {
+                    props: { date: date }
+                }
+            });
+        },
+        closeModal: function closeModal() {
+            return dispatch({
+                type: _actions.CLOSE_MODAL
+            });
+        }
+    };
+};
+
 exports.default = {
-    component: ContactPage
+    component: (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(HomePage)
 };
 
 /***/ }),
@@ -512,11 +551,13 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(2);
+var _moment = __webpack_require__(17);
 
-var _actions = __webpack_require__(1);
+var _moment2 = _interopRequireDefault(_moment);
 
-var _reactHelmet = __webpack_require__(6);
+var _CalendarDay = __webpack_require__(18);
+
+var _CalendarDay2 = _interopRequireDefault(_CalendarDay);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -526,216 +567,261 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var UsersListPage = function (_Component) {
-    _inherits(UsersListPage, _Component);
+var day = {
+    color: "#FFFFFF",
+    fontSize: "20px",
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "500",
+    marginRight: "55px",
+    marginTop: "20px"
 
-    function UsersListPage() {
-        _classCallCheck(this, UsersListPage);
+};
+var cMonth = {
+    color: "#DFDFDF",
+    opacity: "1",
+    fontSize: "23px",
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "500",
+    textTransform: "uppercase"
+};
 
-        return _possibleConstructorReturn(this, (UsersListPage.__proto__ || Object.getPrototypeOf(UsersListPage)).apply(this, arguments));
+var Calendar = function (_Component) {
+    _inherits(Calendar, _Component);
+
+    function Calendar(props) {
+        _classCallCheck(this, Calendar);
+
+        var _this = _possibleConstructorReturn(this, (Calendar.__proto__ || Object.getPrototypeOf(Calendar)).call(this, props));
+
+        _this.state = {
+            month: (0, _moment2.default)(),
+            selected: (0, _moment2.default)().startOf('day')
+        };
+        _this.previous = _this.previous.bind(_this);
+        _this.next = _this.next.bind(_this);
+        return _this;
     }
 
-    _createClass(UsersListPage, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.props.fetchUsers();
-        }
-    }, {
-        key: 'renderUsers',
-        value: function renderUsers() {
-            return this.props.users.map(function (user) {
-                return _react2.default.createElement(
-                    'li',
-                    { key: user.id },
-                    user.name
-                );
+    _createClass(Calendar, [{
+        key: 'previous',
+        value: function previous() {
+            var month = this.state.month;
+
+
+            this.setState({
+                month: month.subtract(1, 'month')
             });
         }
     }, {
-        key: 'head',
-        value: function head() {
+        key: 'next',
+        value: function next() {
+            var month = this.state.month;
+
+
+            this.setState({
+                month: month.add(1, 'month')
+            });
+        }
+    }, {
+        key: 'select',
+        value: function select(day) {
+            this.setState({
+                selected: day.date,
+                month: day.date.clone()
+            });
+        }
+    }, {
+        key: 'renderWeeks',
+        value: function renderWeeks() {
+            var _this2 = this;
+
+            var weeks = [];
+            var done = false;
+            var date = this.state.month.clone().startOf("month").add("w" - 1).day("Sunday");
+            var count = 0;
+            var monthIndex = date.month();
+
+            var _state = this.state,
+                selected = _state.selected,
+                month = _state.month;
+
+
+            while (!done) {
+                weeks.push(_react2.default.createElement(Week, { key: date,
+                    date: date.clone(),
+                    month: month,
+                    select: function select(date) {
+                        return _this2.props.select(date);
+                    },
+                    selected: selected }));
+
+                date.add(1, "w");
+
+                done = count++ > 2 && monthIndex !== date.month();
+                monthIndex = date.month();
+            }
+
+            return weeks;
+        }
+    }, {
+        key: 'renderMonthLabel',
+        value: function renderMonthLabel() {
+            var month = this.state.month;
+
+
             return _react2.default.createElement(
-                _reactHelmet.Helmet,
-                null,
-                _react2.default.createElement(
-                    'title',
-                    null,
-                    this.props.users.length + ' Users Loaded'
-                ),
-                _react2.default.createElement('meta', { property: 'og:title', content: 'Users App' })
+                'span',
+                { style: cMonth },
+                month.format("MMMM YYYY")
             );
         }
     }, {
         key: 'render',
         value: function render() {
             return _react2.default.createElement(
-                'div',
+                'section',
                 null,
-                this.head(),
-                'LIST USERS:',
                 _react2.default.createElement(
-                    'ul',
+                    'div',
+                    { style: { marginTop: "40px", paddingBottom: "15px", borderBottom: "1px solid grey" } },
+                    _react2.default.createElement(
+                        'header',
+                        null,
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'month-display row' },
+                            _react2.default.createElement(
+                                'div',
+                                { onClick: this.previous },
+                                _react2.default.createElement('img', { style: { width: "100%", height: "auto" }, src: '/assets/arrowLeft.png' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { style: { margin: "0 auto" } },
+                                this.renderMonthLabel()
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { onClick: this.next },
+                                _react2.default.createElement('img', { style: { width: "100%", height: "auto" }, src: '/assets/arrowRight.png' })
+                            )
+                        )
+                    )
+                ),
+                _react2.default.createElement(
+                    'div',
                     null,
-                    this.renderUsers()
+                    this.renderWeeks()
+                ),
+                _react2.default.createElement(
+                    'div',
+                    { style: { borderTop: "1px solid grey", borderBottom: "1px solid grey" } },
+                    _react2.default.createElement(
+                        'div',
+                        { style: { margin: "10px" } },
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'S'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'M'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'T'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'W'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'T'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'F'
+                        ),
+                        _react2.default.createElement(
+                            'span',
+                            { style: day },
+                            'S'
+                        )
+                    )
                 )
             );
         }
     }]);
 
-    return UsersListPage;
+    return Calendar;
 }(_react.Component);
 
-function mapStateToProps(state) {
-    return { users: state.users };
-}
+var Week = function (_Component2) {
+    _inherits(Week, _Component2);
 
-function loadData(store) {
-    //return promise
-    return store.dispatch((0, _actions.fetchUsers)());
-}
+    function Week() {
+        _classCallCheck(this, Week);
 
-exports.default = {
-    loadData: loadData,
-    component: (0, _reactRedux.connect)(mapStateToProps, { fetchUsers: _actions.fetchUsers })(UsersListPage)
-};
-
-/***/ }),
-/* 16 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterConfig = __webpack_require__(4);
-
-var _Header = __webpack_require__(17);
-
-var _Header2 = _interopRequireDefault(_Header);
-
-var _Footer = __webpack_require__(18);
-
-var _Footer2 = _interopRequireDefault(_Footer);
-
-var _actions = __webpack_require__(1);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var App = function App(_ref) {
-    var route = _ref.route;
-
-    return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(_Header2.default, null),
-        (0, _reactRouterConfig.renderRoutes)(route.routes),
-        _react2.default.createElement(_Footer2.default, null)
-    );
-};
-
-exports.default = {
-    component: App,
-    loadData: function loadData(_ref2) {
-        var dispatch = _ref2.dispatch;
-        return dispatch((0, _actions.fetchCurrentUser)());
+        return _possibleConstructorReturn(this, (Week.__proto__ || Object.getPrototypeOf(Week)).apply(this, arguments));
     }
-};
+
+    _createClass(Week, [{
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            var days = [];
+            var date = this.props.date;
+            var _props = this.props,
+                month = _props.month,
+                selected = _props.selected,
+                select = _props.select;
+
+
+            for (var i = 0; i < 7; i++) {
+                var _day = {
+                    name: date.format("dddd"),
+                    number: date.date(),
+                    isCurrentMonth: date.month() === month.month(),
+                    isToday: date.isSame(new Date(), "day"),
+                    date: date.format('MMMM')
+                };
+                days.push(_react2.default.createElement(_CalendarDay2.default, { day: _day,
+                    select: function select(date) {
+                        _this4.props.select(date);
+                    }
+                }));
+
+                date = date.clone();
+                date.add(1, "day");
+            }
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'row week', key: days[0] },
+                days
+            );
+        }
+    }]);
+
+    return Week;
+}(_react.Component);
+
+exports.default = Calendar;
 
 /***/ }),
+/* 16 */,
 /* 17 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(3);
-
-var _reactRedux = __webpack_require__(2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Header = function Header(_ref) {
-    var auth = _ref.auth;
-
-    console.log('My auth status', auth);
-
-    var authButton = auth ? _react2.default.createElement(
-        'a',
-        { href: '/api/logout' },
-        'Logout'
-    ) : _react2.default.createElement(
-        'a',
-        { href: '/api/auth/google' },
-        'Login'
-    );
-
-    return _react2.default.createElement(
-        'nav',
-        null,
-        _react2.default.createElement(
-            'div',
-            { className: 'nav-wrapper' },
-            _react2.default.createElement(
-                _reactRouterDom.Link,
-                { to: '/', className: 'brand-logo' },
-                'React SSR'
-            ),
-            _react2.default.createElement(
-                'ul',
-                { className: 'right' },
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: '/users' },
-                        'Users'
-                    ),
-                    ' '
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    ' ',
-                    _react2.default.createElement(
-                        _reactRouterDom.Link,
-                        { to: '/admins' },
-                        'Admins'
-                    )
-                ),
-                _react2.default.createElement(
-                    'li',
-                    null,
-                    ' ',
-                    authButton
-                )
-            )
-        )
-    );
-};
-
-function mapStateToProps(_ref2) {
-    var auth = _ref2.auth;
-
-    return { auth: auth };
-}
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
+module.exports = require("moment");
 
 /***/ }),
 /* 18 */
@@ -748,33 +834,95 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Footer = {
-    marginTop: "1rem",
-    padding: "1rem",
-    backgroundColor: "rgb(235, 195, 64)",
-    position: "fixed",
-    bottom: "0",
-    left: "0",
-    width: "100%"
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var cDate = {
+    fontSize: "16px",
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "500",
+    width: "52px",
+    height: "51px",
+    margin: "8px",
+    textAlign: "center",
+    lineHeight: "3em"
+
 };
 
-exports.default = function () {
-    return _react2.default.createElement(
-        "div",
-        { style: Footer },
-        _react2.default.createElement(
-            "p",
-            null,
-            "This is some content in sticky footer"
-        )
-    );
-};
+var CalendarDay = function (_Component) {
+    _inherits(CalendarDay, _Component);
+
+    function CalendarDay() {
+        _classCallCheck(this, CalendarDay);
+
+        return _possibleConstructorReturn(this, (CalendarDay.__proto__ || Object.getPrototypeOf(CalendarDay)).apply(this, arguments));
+    }
+
+    _createClass(CalendarDay, [{
+        key: "render",
+        value: function render() {
+            var _this2 = this;
+
+            var _props = this.props,
+                day = _props.day,
+                _props$day = _props.day,
+                date = _props$day.date,
+                isCurrentMonth = _props$day.isCurrentMonth,
+                isToday = _props$day.isToday,
+                number = _props$day.number;
+
+            function hoverOn(e) {
+                e.target.style.color = '#FDD000';
+                if (isToday) {
+                    e.target.style.color = '#3D3D3D';
+                }
+            }
+            function hoverOff(e) {
+                e.target.style.color = '#DFDFDF';
+                if (!isCurrentMonth) {
+                    e.target.style.color = '#3D3D3D';
+                }
+                if (isToday) {
+                    e.target.style.color = '#3D3D3D';
+                }
+            }
+
+            return _react2.default.createElement(
+                "div",
+                { style: cDate },
+                _react2.default.createElement(
+                    "div",
+                    { style: isToday ? { backgroundColor: '#FDD000' } : { backgroundColor: '#272829' } },
+                    _react2.default.createElement(
+                        "span",
+                        { onMouseOver: hoverOn, onMouseLeave: hoverOff,
+                            key: date.toString(),
+                            style: isCurrentMonth ? { color: 'white', cursor: "pointer" } : { color: 'rgba(223, 223, 223, 0.4)', cursor: "pointer" },
+                            onClick: function onClick() {
+                                _this2.props.select(day);
+                            } },
+                        number
+                    )
+                )
+            );
+        }
+    }]);
+
+    return CalendarDay;
+}(_react.Component);
+
+exports.default = CalendarDay;
 
 /***/ }),
 /* 19 */
@@ -793,20 +941,54 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NotFoundPage = function NotFoundPage(_ref) {
-    var _ref$staticContext = _ref.staticContext,
-        staticContext = _ref$staticContext === undefined ? {} : _ref$staticContext;
-
-    staticContext.notFound = true;
+var pText = {
+    color: "#3D3D3D",
+    fontSize: "18px",
+    lineHeight: '1.5em',
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "300",
+    paddingTop: "7px"
+};
+var h2Text = {
+    color: "#3D3D3D",
+    fontSize: "34px",
+    lineHeight: '1.5em',
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: "700"
+};
+var AboutUsPage = function AboutUsPage() {
     return _react2.default.createElement(
-        'h1',
-        null,
-        'Opps, route not found.'
+        "div",
+        { style: { margin: "2% 15%" } },
+        _react2.default.createElement(
+            "h2",
+            { style: h2Text },
+            "Lorem ipsum creation timelines"
+        ),
+        _react2.default.createElement(
+            "p",
+            { style: pText },
+            "So how did the classical Latin become so incoherent? According to McClintock, a 15th century typesetter likely scrambled part of Cicero's De Finibus in order to provide placeholder text to mockup various fonts for a type specimen book."
+        ),
+        _react2.default.createElement(
+            "p",
+            { style: pText },
+            "It's difficult to find examples of lorem ipsum in use before Letraset made it popular as a dummy text in the 1960s, although McClintock says he remembers coming across the lorem ipsum passage in a book of old metal type samples. So far he hasn't relocated where he once saw the passage, but the popularity of Cicero in the 15th century supports the theory that the filler text has been used for centuries."
+        ),
+        _react2.default.createElement(
+            "p",
+            { style: pText },
+            "And anyways, as Cecil Adams reasoned, \u201C[Do you really] think graphic arts supply houses were hiring classics scholars in the 1960s?\u201D Perhaps. But it seems reasonable to imagine that there was a version in use far before the age of Letraset."
+        ),
+        _react2.default.createElement(
+            "p",
+            { style: pText },
+            "McClintock wrote to Before & After to explain his discovery; \u201CWhat I find remarkable is that this text has been the industry's standard dummy text ever since some printer in the 1500s took a galley of type and scrambled it to make a type specimen book; it has survived not only four centuries of letter-by-letter resetting but even the leap into electronic typesetting, essentially unchanged except for an occasional 'ing' or 'y' thrown in. It's ironic that when the then-understood Latin was scrambled, it became as incomprehensible as Greek; the phrase 'it's Greek to me' and 'greeking' have common semantic roots!\u201D (The editors published his letter in a correction headlined \u201CLorem Oopsum\u201D)."
+        )
     );
 };
-
 exports.default = {
-    component: NotFoundPage
+    component: AboutUsPage
 };
 
 /***/ }),
@@ -820,87 +1002,31 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(2);
+var _reactRouterConfig = __webpack_require__(3);
 
-var _actions = __webpack_require__(1);
+var _Header = __webpack_require__(21);
 
-var _requireAuth = __webpack_require__(21);
-
-var _requireAuth2 = _interopRequireDefault(_requireAuth);
+var _Header2 = _interopRequireDefault(_Header);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var App = function App(_ref) {
+    var route = _ref.route;
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+    return _react2.default.createElement(
+        'div',
+        { style: { overflow: "hidden " } },
+        _react2.default.createElement(_Header2.default, null),
+        (0, _reactRouterConfig.renderRoutes)(route.routes)
+    );
+};
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AdminsListPage = function (_Component) {
-    _inherits(AdminsListPage, _Component);
-
-    function AdminsListPage() {
-        _classCallCheck(this, AdminsListPage);
-
-        return _possibleConstructorReturn(this, (AdminsListPage.__proto__ || Object.getPrototypeOf(AdminsListPage)).apply(this, arguments));
-    }
-
-    _createClass(AdminsListPage, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this.props.fetchAdmins();
-        }
-    }, {
-        key: 'renderAdmins',
-        value: function renderAdmins() {
-            return this.props.admins.map(function (admin) {
-                return _react2.default.createElement(
-                    'li',
-                    { key: admin.id },
-                    admin.name
-                );
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'h3',
-                    null,
-                    'Protected list of admins'
-                ),
-                _react2.default.createElement(
-                    'ul',
-                    null,
-                    this.renderAdmins()
-                )
-            );
-        }
-    }]);
-
-    return AdminsListPage;
-}(_react.Component);
-
-function mapStateToProps(_ref) {
-    var admins = _ref.admins;
-
-    return { admins: admins };
-}
 exports.default = {
-    component: (0, _reactRedux.connect)(mapStateToProps, { fetchAdmins: _actions.fetchAdmins })((0, _requireAuth2.default)(AdminsListPage)),
-    loadData: function loadData(_ref2) {
-        var dispatch = _ref2.dispatch;
-        return dispatch((0, _actions.fetchAdmins)());
-    }
+    component: App
 };
 
 /***/ }),
@@ -914,62 +1040,76 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
 var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRedux = __webpack_require__(2);
-
-var _reactRouterDom = __webpack_require__(3);
+var _reactRouterDom = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-exports.default = function (ChildComponent) {
-    var RequireAuth = function (_Component) {
-        _inherits(RequireAuth, _Component);
-
-        function RequireAuth() {
-            _classCallCheck(this, RequireAuth);
-
-            return _possibleConstructorReturn(this, (RequireAuth.__proto__ || Object.getPrototypeOf(RequireAuth)).apply(this, arguments));
-        }
-
-        _createClass(RequireAuth, [{
-            key: 'render',
-            value: function render() {
-                switch (this.props.auth) {
-                    case false:
-                        return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
-                    case null:
-                        return _react2.default.createElement(
-                            'div',
-                            null,
-                            'Loading...'
-                        );
-                    default:
-                        return _react2.default.createElement(ChildComponent, this.props);
-                }
-            }
-        }]);
-
-        return RequireAuth;
-    }(_react.Component);
-
-    function mapStateToProps(_ref) {
-        var auth = _ref.auth;
-
-        return { auth: auth };
-    }
-    return (0, _reactRedux.connect)(mapStateToProps)(RequireAuth);
+var nav = {
+    textTransform: "uppercase",
+    height: "130px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    textAlign: "center"
 };
+var li = {
+    color: "#3D3D3D",
+    fontSize: "28px",
+    fontFamily: "Rubik",
+    textTransform: "uppercase",
+    display: "block",
+    paddingTop: "40px",
+    paddingRight: "110px",
+    marginLeft: "-40px"
+};
+
+var Header = function Header() {
+    return _react2.default.createElement(
+        'div',
+        { style: nav },
+        _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+                _reactRouterDom.Link,
+                { to: '/' },
+                _react2.default.createElement('img', { style: { marginTop: "24px", marginLeft: "110px" }, src: '/assets/logoSmall.jpeg', alt: 'logo' })
+            )
+        ),
+        _react2.default.createElement(
+            'div',
+            { style: { textAlign: "center" } },
+            _react2.default.createElement(
+                'ul',
+                { style: { display: "flex" } },
+                _react2.default.createElement(
+                    'li',
+                    { style: li },
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { style: { color: "#3D3D3D", textDecoration: "none" }, to: '/' },
+                        'Home'
+                    )
+                ),
+                _react2.default.createElement(
+                    'li',
+                    { style: li },
+                    _react2.default.createElement(
+                        _reactRouterDom.Link,
+                        { style: { color: "#3D3D3D", textDecoration: "none" }, to: '/about' },
+                        'About Us'
+                    )
+                )
+            )
+        )
+    );
+};
+
+exports.default = Header;
 
 /***/ }),
 /* 22 */
@@ -994,15 +1134,11 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(7);
+var _redux = __webpack_require__(8);
 
 var _reduxThunk = __webpack_require__(25);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
-
-var _axios = __webpack_require__(26);
-
-var _axios2 = _interopRequireDefault(_axios);
 
 var _reducers = __webpack_require__(27);
 
@@ -1010,13 +1146,8 @@ var _reducers2 = _interopRequireDefault(_reducers);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-exports.default = function (req) {
-    var axiosInstance = _axios2.default.create({
-        baseURL: 'http://react-ssr-api.herokuapp.com',
-        headers: { cookie: req.get('cookie') || '' }
-    });
-
-    var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default.withExtraArgument(axiosInstance)));
+exports.default = function () {
+    var store = (0, _redux.createStore)(_reducers2.default, {}, (0, _redux.applyMiddleware)(_reduxThunk2.default));
     return store;
 };
 
@@ -1027,12 +1158,7 @@ exports.default = function (req) {
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 26 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
+/* 26 */,
 /* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1043,31 +1169,24 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _redux = __webpack_require__(7);
+var _redux = __webpack_require__(8);
 
-var _usersReducer = __webpack_require__(28);
+var _modalReducer = __webpack_require__(31);
 
-var _usersReducer2 = _interopRequireDefault(_usersReducer);
-
-var _authReduser = __webpack_require__(29);
-
-var _authReduser2 = _interopRequireDefault(_authReduser);
-
-var _adminsReducer = __webpack_require__(30);
-
-var _adminsReducer2 = _interopRequireDefault(_adminsReducer);
+var _modalReducer2 = _interopRequireDefault(_modalReducer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = (0, _redux.combineReducers)({
-    users: _usersReducer2.default,
-    auth: _authReduser2.default,
-    admins: _adminsReducer2.default
+    modal: _modalReducer2.default
 
 });
 
 /***/ }),
-/* 28 */
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1077,68 +1196,30 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _actions = __webpack_require__(1);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
 exports.default = function () {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
     var action = arguments[1];
 
     switch (action.type) {
-        case _actions.FETCH_USERS:
-            return action.payload.data;
+        case _index.OPEN_MODAL:
+            return _extends({}, state, { opened: true,
+                props: action.payload.props
+
+            });
+        case _index.CLOSE_MODAL:
+            return _extends({}, state, { opened: false });
         default:
             return state;
     }
 };
 
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
+var _index = __webpack_require__(1);
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-exports.default = function () {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-    var action = arguments[1];
-
-    switch (action.type) {
-        case _actions.FETCH_CURRENT_USER:
-            return action.payload.data || false;
-        default:
-            return state;
-    }
-};
-
-var _actions = __webpack_require__(1);
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _actions = __webpack_require__(1);
-
-exports.default = function () {
-    var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var action = arguments[1];
-
-    switch (action.type) {
-        case _actions.FETCH_ADMINS:
-            return action.payload.data;
-        default:
-            return state;
-    }
+var initialState = {
+    opened: false,
+    props: {}
 };
 
 /***/ })

@@ -7,10 +7,10 @@ import {renderRoutes} from "react-router-config";
 import serialize from 'serialize-javascript';
 import {Helmet} from "react-helmet";
 
-export default (req, store, context)=>{
+export default (req, store)=>{
     const content  = renderingToString(
         <Provider store = {store}>
-        <StaticRouter location={req.path} context ={context}>
+        <StaticRouter location={req.path}>
            <div>
                {renderRoutes(Routes)}
            </div>
@@ -22,7 +22,10 @@ export default (req, store, context)=>{
     return `
 <html>
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" 
+integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" 
+crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;500&display=swap" rel="stylesheet">
 ${helmet.title.toLocaleString()}
 ${helmet.meta.toString()}
 </head>
